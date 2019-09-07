@@ -1,0 +1,22 @@
+<form clrForm>
+    <clr-input-container>
+        <label>Register</label>
+        <label class="lead">Already a member? Please <a routerLink="/login">log in</a> instead.</label>
+    </clr-input-container>
+    <clr-input-container>
+        <label>Full name</label>
+        <input clrInput type="text" [(ngModel)]="credentials.name" name="name" placeholder="Enter your name" required />
+        <clr-control-error>This field is required!</clr-control-error>
+    </clr-input-container>
+    <clr-input-container>
+        <label>Email address</label>
+        <input clrInput type="text" [(ngModel)]="credentials.email" name="email" placeholder="Enter your email" required />
+        <clr-control-error>This field is required!</clr-control-error>
+    </clr-input-container>
+    <clr-input-container>
+        <label>Password</label>
+        <input clrInput type="password" [(ngModel)]="credentials.password" name="password" placeholder="Enter your password" required />
+        <clr-control-error>This field is required!</clr-control-error>
+    </clr-input-container>
+    <button class="btn btn-primary" (click)="register()">Register</button>
+</form>

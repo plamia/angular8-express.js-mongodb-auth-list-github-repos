@@ -1,0 +1,19 @@
+<div class="login-wrapper">
+    <form class="login">
+        <section class="title">
+            Login
+        </section>
+        <div class="login-group">
+            <clr-input-container>
+              <input [(ngModel)]="credentials.email" type="text" name="email" clrInput placeholder="Email address" required />
+              <clr-control-error>This field is required!</clr-control-error>
+            </clr-input-container>
+            <clr-password-container>
+             <input [(ngModel)]="credentials.password" type="password" name="password" clrPassword placeholder="Password" required />
+             <clr-control-error>This field is required!</clr-control-error>
+            </clr-password-container>
+            <button class="btn btn-primary" (click)="login()">LOGIN</button>
+            <label class="lead">Not a member? Please <a routerLink="/register">register</a> instead.</label>
+        </div>
+    </form>
+</div>

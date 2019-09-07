@@ -1,0 +1,54 @@
+<h6>Pinned repositories</h6>
+<div class="content-container">
+  <div class="content-area">
+    <div>
+      <clr-datagrid [(clrDgSelected)]="selected">
+        <clr-dg-column>
+          Name
+          <clr-dg-string-filter [clrDgStringFilter]="nameTypeFilter">
+          </clr-dg-string-filter>
+        </clr-dg-column>
+        <clr-dg-column>
+          License
+          <clr-dg-string-filter>
+          </clr-dg-string-filter>
+        </clr-dg-column>
+        <clr-dg-column>
+          Commits
+          <clr-dg-string-filter>
+          </clr-dg-string-filter>
+        </clr-dg-column>
+        <clr-dg-column>
+          Contributors
+          <clr-dg-string-filter>
+          </clr-dg-string-filter>
+        </clr-dg-column>
+        <clr-dg-column>
+          Releases
+          <clr-dg-string-filter>
+          </clr-dg-string-filter>
+        </clr-dg-column>
+        <clr-dg-column>
+          Branches
+          <clr-dg-string-filter>
+          </clr-dg-string-filter>
+        </clr-dg-column>
+
+        <clr-dg-row routerLink="/details/{{repo.node.name}}" *clrDgItems="let repo of repos" [clrDgItem]="repo" [attr.data-index]="i">
+          <clr-dg-cell>{{repo?.node.name}}</clr-dg-cell>
+          <clr-dg-cell>{{repo?.node.licenseInfo?.name}}</clr-dg-cell>
+          <clr-dg-cell>{{repo?.node.ref.target.history.totalCount}}</clr-dg-cell>
+          <clr-dg-cell>{{repo?.node.collaborators}}</clr-dg-cell>
+          <clr-dg-cell>{{repo?.node.releases.totalCount}}</clr-dg-cell>
+          <clr-dg-cell>{{repo?.node.refs.totalCount}}</clr-dg-cell>
+        </clr-dg-row>
+
+        <clr-dg-footer>
+          <clr-dg-pagination #pagination [clrDgPageSize]="3">
+            {{pagination.firstItem + 1}} - {{pagination.lastItem + 1}} of {{pagination.total}} repos
+          </clr-dg-pagination>
+        </clr-dg-footer>
+      </clr-datagrid>
+    </div>
+  </div>
+</div>
