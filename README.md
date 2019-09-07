@@ -24,9 +24,10 @@
 1. Login and registration of users
 2. Saving user credentials in database (mongodb) - www.mlab.com
 3. Showing of all pinned vmware repositories 
-4. Filtering by "name" of pinned repos and paginate them (pinned repos and details/commits pages);
-5. Detailed page with recent commits and repo info
-6. Responsive design
+4. Pagination
+5. Filtering by "name" of pinned repos and paginate them (pinned repos and details/commits pages);
+6. Detailed page with recent commits and repo info
+7. Responsive design
 
 
 
