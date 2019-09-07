@@ -1,5 +1,3 @@
-# wmware-task
-
 #How to run the project with DOCKER
 
 1. In a root directory run a command - docker-compose up --build
